@@ -35,7 +35,7 @@ body {
 }
 
 .left-panel img {
-  max-width: 220px;
+  max-width: 260px; /* slightly increased */
   margin-bottom: 25px;
 }
 
@@ -116,10 +116,11 @@ textarea {
   <div class="left-panel">
     <img src="https://va1750835680792.my.salesforce.com/sfc/dist/version/download/?oid=00DHu00000TfCjg&ids=068Hu00000nI2qmIAC&d=/a/Hu000000wmG4/uTj7mSYkPRLg4kfT8IRNLR6muQ33bnh5tuG.NmvKQAo&operationContext=DELIVERY&viewId=05HHu0000021yLnMAI&dpt=">
     <p>
-      <strong>SATRAC</strong><br><br>
-      All rights reserved.<br><br>
-      Need help?<br>
-      support@satrac.com
+      © 2026 SATRAC. All rights reserved.<br><br>
+
+      Need Assistance? Call our customer support & talk to our experts.<br><br>
+
+      Toll-Free Number: 9343000111
     </p>
   </div>
 
@@ -163,8 +164,6 @@ textarea {
 
       <input type="text" id="subject" name="subject" placeholder="Subject">
 
-      <textarea name="description" placeholder="Description"></textarea>
-
       <div class="row">
         <select id="priority" name="priority">
           <option value="">Priority</option>
@@ -190,6 +189,9 @@ textarea {
         <option value="Preventive Maintenance">Preventive Maintenance</option>
         <option value="Inspection">Inspection</option>
       </select>
+
+      <!-- DESCRIPTION MOVED HERE -->
+      <textarea name="description" placeholder="Description"></textarea>
 
       <button class="submit-btn" type="submit">Submit Case</button>
 
