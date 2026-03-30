@@ -52,7 +52,7 @@ body {
 
 .section-title {
   font-weight: bold;
-  margin: 25px 0 15px;
+  margin: 30px 0 15px;
   border-left: 4px solid #0b5ed7;
   padding-left: 10px;
   font-size: 15px;
@@ -66,8 +66,8 @@ body {
 
 input, textarea, select {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 11px;
+  border-radius: 6px;
   border: 1px solid #c9d4e5;
   font-size: 14px;
   box-sizing: border-box;
@@ -75,16 +75,16 @@ input, textarea, select {
 
 textarea {
   resize: vertical;
-  min-height: 90px;
+  min-height: 100px;
 }
 
 .submit-btn {
-  margin-top: 30px;
+  margin-top: 35px;
   width: 100%;
   background: #198754;
   color: white;
   border: none;
-  padding: 14px;
+  padding: 15px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
@@ -117,14 +117,10 @@ textarea {
           method="POST">
 
       <input type="hidden" name="orgid" value="00DHu00000TfCjg">
-
-      <!-- THANK YOU PAGE REDIRECT -->
       <input type="hidden" name="retURL" value="https://chaitalidhande25.github.io/SATRAC/Thank%20You.html">
-
-      <!-- IMPORTANT -->
       <input type="hidden" id="external" name="external" value="1">
 
-      <!-- CONTACT INFO -->
+      <!-- CONTACT INFORMATION -->
       <div class="section-title">Contact Information</div>
 
       <input id="name" name="name" type="text" placeholder="Contact Name" required>
@@ -133,6 +129,21 @@ textarea {
         <input id="email" name="email" type="email" placeholder="Email" required>
         <input id="phone" name="phone" type="text" placeholder="Phone">
       </div>
+
+      <!-- ADDRESS INFORMATION -->
+      <div class="section-title">Address Information</div>
+
+      <div class="row">
+        <input id="00NHu00001sDenV" name="00NHu00001sDenV" type="text" placeholder="City">
+        <input id="00NHu00001sDenW" name="00NHu00001sDenW" type="text" placeholder="Country">
+      </div>
+
+      <div class="row">
+        <input id="00NHu00001sDenX" name="00NHu00001sDenX" type="text" placeholder="State">
+        <input id="00NHu00001sDenY" name="00NHu00001sDenY" type="text" placeholder="Street">
+      </div>
+
+      <input id="00NHu00001sDena" name="00NHu00001sDena" type="text" placeholder="Zip">
 
       <!-- CASE DETAILS -->
       <div class="section-title">Case Details</div>
@@ -165,23 +176,7 @@ textarea {
         <option value="Inspection">Inspection</option>
       </select>
 
-      <!-- DESCRIPTION -->
       <textarea name="description" placeholder="Description" required></textarea>
-
-      <!-- ADDRESS -->
-      <div class="section-title">Address</div>
-
-      <div class="row">
-        <input id="00NHu00001sDenV" name="00NHu00001sDenV" type="text" placeholder="City">
-        <input id="00NHu00001sDenW" name="00NHu00001sDenW" type="text" placeholder="Country">
-      </div>
-
-      <div class="row">
-        <input id="00NHu00001sDenX" name="00NHu00001sDenX" type="text" placeholder="State">
-        <input id="00NHu00001sDenY" name="00NHu00001sDenY" type="text" placeholder="Street">
-      </div>
-
-      <input id="00NHu00001sDena" name="00NHu00001sDena" type="text" placeholder="Zip">
 
       <button class="submit-btn" type="submit">Submit Case</button>
 
@@ -189,7 +184,7 @@ textarea {
   </div>
 </div>
 
-<!-- ✅ CONTACT NAME FIX SCRIPT -->
+<!-- CONTACT NAME FIX -->
 <script>
 document.querySelector("form").addEventListener("submit", function() {
     var fullName = document.getElementById("name").value.trim();
