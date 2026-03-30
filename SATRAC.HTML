@@ -50,9 +50,10 @@ body {
   padding: 35px 40px;
 }
 
+/* FIXED SPACING ONLY */
 .section-title {
   font-weight: bold;
-  margin: 25px 0 15px;
+  margin: 25px 0 12px;
   border-left: 4px solid #0b5ed7;
   padding-left: 10px;
   font-size: 15px;
@@ -61,16 +62,19 @@ body {
 .row {
   display: flex;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #c9d4e5;
   font-size: 14px;
   box-sizing: border-box;
+  margin-bottom: 14px; /* uniform spacing */
 }
 
 textarea {
@@ -79,7 +83,7 @@ textarea {
 }
 
 .submit-btn {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 100%;
   background: #198754;
   color: white;
@@ -90,7 +94,8 @@ textarea {
   cursor: pointer;
 }
 
-.row input, .row select {
+.row input,
+.row select {
   flex: 1;
 }
 </style>
@@ -117,30 +122,42 @@ textarea {
           method="POST">
 
       <input type="hidden" name="orgid" value="00DHu00000TfCjg">
-
-      <!-- ✅ UPDATED REDIRECT URL -->
-      <input type="hidden" name="retURL" value="https://chaitalidhande25.github.io/SATRAC/Thank%20You.html">
-
-      <!-- IMPORTANT (keep this exactly) -->
-      <input type="hidden" id="external" name="external" value="1">
+      <input type="hidden" name="retURL"
+             value="https://chaitalidhande25.github.io/SATRAC/Thank%20You.html">
+      <input type="hidden" name="external" value="1">
 
       <!-- CONTACT INFO -->
       <div class="section-title">Contact Information</div>
 
-      <input id="name" name="name" type="text" placeholder="Contact Name" required>
+      <input name="name" type="text" placeholder="Contact Name" required>
 
       <div class="row">
-        <input id="email" name="email" type="email" placeholder="Email" required>
-        <input id="phone" name="phone" type="text" placeholder="Phone">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="phone" type="text" placeholder="Phone">
       </div>
+
+      <!-- ADDRESS -->
+      <div class="section-title">Address</div>
+
+      <div class="row">
+        <input name="00NHu00001sDenV" type="text" placeholder="City">
+        <input name="00NHu00001sDenW" type="text" placeholder="Country">
+      </div>
+
+      <div class="row">
+        <input name="00NHu00001sDenX" type="text" placeholder="State">
+        <input name="00NHu00001sDenY" type="text" placeholder="Street">
+      </div>
+
+      <input name="00NHu00001sDena" type="text" placeholder="Zip">
 
       <!-- CASE DETAILS -->
       <div class="section-title">Case Details</div>
 
-      <input id="subject" name="subject" type="text" placeholder="Subject" required>
+      <input name="subject" type="text" placeholder="Subject" required>
 
       <div class="row">
-        <select id="priority" name="priority">
+        <select name="priority">
           <option value="">Priority</option>
           <option value="Critical">Critical</option>
           <option value="High">High</option>
@@ -148,7 +165,7 @@ textarea {
           <option value="Low">Low</option>
         </select>
 
-        <select id="reason" name="reason">
+        <select name="reason">
           <option value="">Case Reason</option>
           <option value="User didn&#39;t attend training">User didn't attend training</option>
           <option value="Complex functionality">Complex functionality</option>
@@ -158,30 +175,14 @@ textarea {
         </select>
       </div>
 
-      <select id="00NHu00002Km0MJ" name="00NHu00002Km0MJ">
+      <select name="00NHu00002Km0MJ">
         <option value="">Issue Type</option>
         <option value="Breakdown">Breakdown</option>
         <option value="Preventive Maintenance">Preventive Maintenance</option>
         <option value="Inspection">Inspection</option>
       </select>
 
-      <!-- DESCRIPTION -->
       <textarea name="description" placeholder="Description" required></textarea>
-
-      <!-- ADDRESS -->
-      <div class="section-title">Address</div>
-
-      <div class="row">
-        <input id="00NHu00001sDenV" name="00NHu00001sDenV" type="text" placeholder="City">
-        <input id="00NHu00001sDenW" name="00NHu00001sDenW" type="text" placeholder="Country">
-      </div>
-
-      <div class="row">
-        <input id="00NHu00001sDenX" name="00NHu00001sDenX" type="text" placeholder="State">
-        <input id="00NHu00001sDenY" name="00NHu00001sDenY" type="text" placeholder="Street">
-      </div>
-
-      <input id="00NHu00001sDena" name="00NHu00001sDena" type="text" placeholder="Zip">
 
       <button class="submit-btn" type="submit">Submit Case</button>
 
