@@ -22,7 +22,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* LEFT PANEL */
 .left-panel {
   width: 35%;
   background: #ffffff;
@@ -35,7 +34,7 @@ body {
 }
 
 .left-panel img {
-  max-width: 260px; /* slightly increased */
+  max-width: 260px;
   margin-bottom: 25px;
 }
 
@@ -45,7 +44,6 @@ body {
   line-height: 1.7;
 }
 
-/* RIGHT PANEL */
 .right-panel {
   width: 65%;
   background: #dbeaff;
@@ -66,9 +64,7 @@ body {
   margin-bottom: 16px;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -94,15 +90,7 @@ textarea {
   cursor: pointer;
 }
 
-.right-panel form > input,
-.right-panel form > textarea,
-.right-panel form > select,
-.right-panel .row {
-  margin-bottom: 16px;
-}
-
-.row input,
-.row select {
+.row input, .row select {
   flex: 1;
 }
 </style>
@@ -117,9 +105,7 @@ textarea {
     <img src="https://va1750835680792.my.salesforce.com/sfc/dist/version/download/?oid=00DHu00000TfCjg&ids=068Hu00000nI2qmIAC&d=/a/Hu000000wmG4/uTj7mSYkPRLg4kfT8IRNLR6muQ33bnh5tuG.NmvKQAo&operationContext=DELIVERY&viewId=05HHu0000021yLnMAI&dpt=">
     <p>
       © 2026 SATRAC. All rights reserved.<br><br>
-
       Need Assistance? Call our customer support & talk to our experts.<br><br>
-
       Toll-Free Number: 9343000111
     </p>
   </div>
@@ -132,37 +118,24 @@ textarea {
 
       <input type="hidden" name="orgid" value="00DHu00000TfCjg">
       <input type="hidden" name="retURL" value="http://google.com">
+
+      <!-- IMPORTANT (keep this exactly) -->
       <input type="hidden" id="external" name="external" value="1">
 
-      <!-- CONTACT INFORMATION -->
+      <!-- CONTACT INFO -->
       <div class="section-title">Contact Information</div>
 
-      <input type="text" id="name" name="name" placeholder="Contact Name">
+      <input id="name" name="name" type="text" placeholder="Contact Name" required>
 
       <div class="row">
-        <input type="email" id="email" name="email" placeholder="Email">
-        <input type="text" id="phone" name="phone" placeholder="Phone">
+        <input id="email" name="email" type="email" placeholder="Email" required>
+        <input id="phone" name="phone" type="text" placeholder="Phone">
       </div>
-
-      <!-- ADDRESS -->
-      <div class="section-title">Address</div>
-
-      <div class="row">
-        <input type="text" id="00NHu00001sDenV" name="00NHu00001sDenV" placeholder="City">
-        <input type="text" id="00NHu00001sDenW" name="00NHu00001sDenW" placeholder="Country">
-      </div>
-
-      <div class="row">
-        <input type="text" id="00NHu00001sDenX" name="00NHu00001sDenX" placeholder="State">
-        <input type="text" id="00NHu00001sDenY" name="00NHu00001sDenY" placeholder="Street">
-      </div>
-
-      <input type="text" id="00NHu00001sDena" name="00NHu00001sDena" placeholder="Zip Code">
 
       <!-- CASE DETAILS -->
       <div class="section-title">Case Details</div>
 
-      <input type="text" id="subject" name="subject" placeholder="Subject">
+      <input id="subject" name="subject" type="text" placeholder="Subject" required>
 
       <div class="row">
         <select id="priority" name="priority">
@@ -190,8 +163,23 @@ textarea {
         <option value="Inspection">Inspection</option>
       </select>
 
-      <!-- DESCRIPTION MOVED HERE -->
-      <textarea name="description" placeholder="Description"></textarea>
+      <!-- DESCRIPTION (MUST BE PRESENT & REQUIRED) -->
+      <textarea name="description" placeholder="Description" required></textarea>
+
+      <!-- ADDRESS (kept EXACT field IDs) -->
+      <div class="section-title">Address</div>
+
+      <div class="row">
+        <input id="00NHu00001sDenV" name="00NHu00001sDenV" type="text" placeholder="City">
+        <input id="00NHu00001sDenW" name="00NHu00001sDenW" type="text" placeholder="Country">
+      </div>
+
+      <div class="row">
+        <input id="00NHu00001sDenX" name="00NHu00001sDenX" type="text" placeholder="State">
+        <input id="00NHu00001sDenY" name="00NHu00001sDenY" type="text" placeholder="Street">
+      </div>
+
+      <input id="00NHu00001sDena" name="00NHu00001sDena" type="text" placeholder="Zip">
 
       <button class="submit-btn" type="submit">Submit Case</button>
 
