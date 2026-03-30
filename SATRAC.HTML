@@ -52,7 +52,7 @@ body {
 
 .section-title {
   font-weight: bold;
-  margin: 30px 0 15px;
+  margin: 30px 0 18px;
   border-left: 4px solid #0b5ed7;
   padding-left: 10px;
   font-size: 15px;
@@ -61,12 +61,16 @@ body {
 .row {
   display: flex;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.full-width {
+  margin-bottom: 18px;
 }
 
 input, textarea, select {
   width: 100%;
-  padding: 11px;
+  padding: 12px;
   border-radius: 6px;
   border: 1px solid #c9d4e5;
   font-size: 14px;
@@ -75,11 +79,11 @@ input, textarea, select {
 
 textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 110px;
 }
 
 .submit-btn {
-  margin-top: 35px;
+  margin-top: 30px;
   width: 100%;
   background: #198754;
   color: white;
@@ -88,10 +92,6 @@ textarea {
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.row input, .row select {
-  flex: 1;
 }
 </style>
 </head>
@@ -123,7 +123,13 @@ textarea {
       <!-- CONTACT INFORMATION -->
       <div class="section-title">Contact Information</div>
 
-      <input id="name" name="name" type="text" placeholder="Contact Name" required>
+      <div class="row">
+        <input id="first_name_input" type="text" placeholder="First Name" required>
+        <input id="last_name_input" type="text" placeholder="Last Name" required>
+      </div>
+
+      <!-- Hidden field for Salesforce Contact Name -->
+      <input id="name" name="name" type="hidden">
 
       <div class="row">
         <input id="email" name="email" type="email" placeholder="Email" required>
@@ -143,12 +149,16 @@ textarea {
         <input id="00NHu00001sDenY" name="00NHu00001sDenY" type="text" placeholder="Street">
       </div>
 
-      <input id="00NHu00001sDena" name="00NHu00001sDena" type="text" placeholder="Zip">
+      <div class="full-width">
+        <input id="00NHu00001sDena" name="00NHu00001sDena" type="text" placeholder="Zip">
+      </div>
 
       <!-- CASE DETAILS -->
       <div class="section-title">Case Details</div>
 
-      <input id="subject" name="subject" type="text" placeholder="Subject" required>
+      <div class="full-width">
+        <input id="subject" name="subject" type="text" placeholder="Subject" required>
+      </div>
 
       <div class="row">
         <select id="priority" name="priority">
@@ -169,14 +179,18 @@ textarea {
         </select>
       </div>
 
-      <select id="00NHu00002Km0MJ" name="00NHu00002Km0MJ">
-        <option value="">Issue Type</option>
-        <option value="Breakdown">Breakdown</option>
-        <option value="Preventive Maintenance">Preventive Maintenance</option>
-        <option value="Inspection">Inspection</option>
-      </select>
+      <div class="full-width">
+        <select id="00NHu00002Km0MJ" name="00NHu00002Km0MJ">
+          <option value="">Issue Type</option>
+          <option value="Breakdown">Breakdown</option>
+          <option value="Preventive Maintenance">Preventive Maintenance</option>
+          <option value="Inspection">Inspection</option>
+        </select>
+      </div>
 
-      <textarea name="description" placeholder="Description" required></textarea>
+      <div class="full-width">
+        <textarea name="description" placeholder="Description" required></textarea>
+      </div>
 
       <button class="submit-btn" type="submit">Submit Case</button>
 
@@ -184,28 +198,15 @@ textarea {
   </div>
 </div>
 
-<!-- CONTACT NAME FIX -->
+<!-- COMBINE FIRST + LAST NAME -->
 <script>
 document.querySelector("form").addEventListener("submit", function() {
-    var fullName = document.getElementById("name").value.trim();
 
-    if(fullName){
-        var parts = fullName.split(" ");
-        var firstName = parts[0];
-        var lastName = parts.length > 1 ? parts.slice(1).join(" ") : "NA";
+    var firstName = document.getElementById("first_name_input").value.trim();
+    var lastName = document.getElementById("last_name_input").value.trim();
 
-        var fn = document.createElement("input");
-        fn.type = "hidden";
-        fn.name = "first_name";
-        fn.value = firstName;
-        this.appendChild(fn);
+    document.getElementById("name").value = firstName + " " + lastName;
 
-        var ln = document.createElement("input");
-        ln.type = "hidden";
-        ln.name = "last_name";
-        ln.value = lastName;
-        this.appendChild(ln);
-    }
 });
 </script>
 
