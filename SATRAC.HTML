@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SATRAC – Support Case</title>
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e9f2ff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 35%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 25px;
+  text-align: center;
+}
+
+.left-panel img {
+  max-width: 220px;
+  margin-bottom: 25px;
+}
+
+.left-panel p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  width: 65%;
+  background: #dbeaff;
+  padding: 35px 40px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin: 25px 0 15px;
+  border-left: 4px solid #0b5ed7;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #c9d4e5;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  width: 100%;
+  background: #198754;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.right-panel form > input,
+.right-panel form > textarea,
+.right-panel form > select,
+.right-panel .row {
+  margin-bottom: 16px;
+}
+
+.row input,
+.row select {
+  flex: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <img src="https://va1750835680792.my.salesforce.com/sfc/dist/version/download/?oid=00DHu00000TfCjg&ids=068Hu00000nI2qmIAC&d=/a/Hu000000wmG4/uTj7mSYkPRLg4kfT8IRNLR6muQ33bnh5tuG.NmvKQAo&operationContext=DELIVERY&viewId=05HHu0000021yLnMAI&dpt=">
+    <p>
+      <strong>SATRAC</strong><br><br>
+      All rights reserved.<br><br>
+      Need help?<br>
+      support@satrac.com
+    </p>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHu00000TfCjg"
+          method="POST">
+
+      <input type="hidden" name="orgid" value="00DHu00000TfCjg">
+      <input type="hidden" name="retURL" value="http://google.com">
+      <input type="hidden" id="external" name="external" value="1">
+
+      <!-- CONTACT INFORMATION -->
+      <div class="section-title">Contact Information</div>
+
+      <input type="text" id="name" name="name" placeholder="Contact Name">
+
+      <div class="row">
+        <input type="email" id="email" name="email" placeholder="Email">
+        <input type="text" id="phone" name="phone" placeholder="Phone">
+      </div>
+
+      <!-- ADDRESS -->
+      <div class="section-title">Address</div>
+
+      <div class="row">
+        <input type="text" id="00NHu00001sDenV" name="00NHu00001sDenV" placeholder="City">
+        <input type="text" id="00NHu00001sDenW" name="00NHu00001sDenW" placeholder="Country">
+      </div>
+
+      <div class="row">
+        <input type="text" id="00NHu00001sDenX" name="00NHu00001sDenX" placeholder="State">
+        <input type="text" id="00NHu00001sDenY" name="00NHu00001sDenY" placeholder="Street">
+      </div>
+
+      <input type="text" id="00NHu00001sDena" name="00NHu00001sDena" placeholder="Zip Code">
+
+      <!-- CASE DETAILS -->
+      <div class="section-title">Case Details</div>
+
+      <input type="text" id="subject" name="subject" placeholder="Subject">
+
+      <textarea name="description" placeholder="Description"></textarea>
+
+      <div class="row">
+        <select id="priority" name="priority">
+          <option value="">Priority</option>
+          <option value="Critical">Critical</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <select id="reason" name="reason">
+          <option value="">Case Reason</option>
+          <option value="User didn&#39;t attend training">User didn't attend training</option>
+          <option value="Complex functionality">Complex functionality</option>
+          <option value="Existing problem">Existing problem</option>
+          <option value="Instructions not clear">Instructions not clear</option>
+          <option value="New problem">New problem</option>
+        </select>
+      </div>
+
+      <select id="00NHu00002Km0MJ" name="00NHu00002Km0MJ">
+        <option value="">Issue Type</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Preventive Maintenance">Preventive Maintenance</option>
+        <option value="Inspection">Inspection</option>
+      </select>
+
+      <button class="submit-btn" type="submit">Submit Case</button>
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
